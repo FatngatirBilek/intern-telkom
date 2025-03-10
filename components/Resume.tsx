@@ -109,7 +109,7 @@ export default function Resume() {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="about">AboutMe</TabsTrigger>
+            <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
 
           {/* Content */}

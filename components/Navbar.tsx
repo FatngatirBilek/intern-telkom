@@ -1,29 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const links: { name: string; path: string }[] = [
-  {
-    name: "home",
-    path: "#hero",
-  },
-  {
-    name: "services",
-    path: "#services",
-  },
-  {
-    name: "resume",
-    path: "#resume",
-  },
-  {
-    name: "work",
-    path: "#work",
-  },
-  {
-    name: "contact",
-    path: "#contact",
-  },
+  { name: "home", path: "#hero" },
+  { name: "services", path: "#services" },
+  { name: "resume", path: "#resume" },
+  { name: "work", path: "#work" },
+  { name: "contact", path: "#contact" },
 ];
 
 const scrolltoHash = (element_id: string) => {
@@ -37,15 +22,32 @@ const scrolltoHash = (element_id: string) => {
 
 export default function Navbar() {
   const pathname: string = usePathname();
+  const [activeHash, setActiveHash] = useState<string>("");
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // Set initial hash
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   return (
     <nav className="flex gap-8">
-      {links.map((link: { name: string; path: string }, index) => (
+      {links.map((link, index) => (
         <a
           key={index}
-          onClick={() => scrolltoHash(link.path.replace("#", ""))}
+          onClick={() => {
+            scrolltoHash(link.path.replace("#", ""));
+            setActiveHash(link.path);
+          }}
           className={`${
-            pathname === link.path && "text-accent border-b-2 border-accent"
+            activeHash === link.path && "text-accent border-b-2 border-accent"
           } capitalize font-medium hover:text-accent transition-all cursor-pointer`}
         >
           {link.name}
