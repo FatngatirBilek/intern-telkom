@@ -29,7 +29,7 @@ const projects = [
     description:
       "Nixos hyprland dotfiles with custom color schemes and secret manager with nvidia+intel support and with acer module support for backlight keyboard",
     stack: [{ name: "Nix" }, { name: "Lua" }, { name: "Bash" }],
-    image: "/images/Projects/Dots.png",
+    image: "/images/Projects/Dots.webp",
     live: "https://example.com/NixyDotsLive",
     github: "https://github.com/FatngatirBilek/NixyDots",
   },
@@ -40,7 +40,7 @@ const projects = [
     description:
       "Static Live count used on Airlangga 2024 build using nextjs using chartjs",
     stack: [{ name: "NextJS" }, { name: "ChartJS" }],
-    image: "/images/Projects/Airlangga.png",
+    image: "/images/Projects/Airlangga.webp",
     live: "https://example.com/Airlangga2024Live",
     github: "https://github.com/FatngatirBilek/Airlangga2024",
   },

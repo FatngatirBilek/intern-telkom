@@ -23,7 +23,7 @@ export default function Photo() {
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/images/photo.png"
+            src="/images/photo.webp"
             priority
             quality={100}
             fill
