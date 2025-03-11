@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Resume from "@/components/Resume";
 import Work from "@/components/Work";
 import Type from "@/components/Type";
+import Spotify from "@/components/Spotify";
 
 export default function Home() {
   return (
@@ -61,6 +62,9 @@ export default function Home() {
       </div>
       <div id="work">
         <Work />
+      </div>
+      <div id="spotify">
+        <Spotify />
       </div>
     </section>
   );
