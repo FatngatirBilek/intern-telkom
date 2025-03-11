@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
+        <SpeedInsights />
         <Header />
         <PageTransition>{children}</PageTransition>
       </body>

@@ -50,9 +50,9 @@ export default function Home() {
       <div id="stat">
         <Stat />
       </div>
-      <div id="services">
+      {/* <div id="services">
         <Services />
-      </div>
+      </div> */}
       <div id="resume">
         <Resume />
       </div>
