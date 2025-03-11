@@ -5,6 +5,7 @@ import Photo from "@/components/Photo";
 import Stat from "@/components/Stat";
 import Services from "@/components/Services";
 import Resume from "@/components/Resume";
+import Work from "@/components/Work";
 
 export default function Home() {
   return (
@@ -54,6 +55,9 @@ export default function Home() {
       </div>
       <div id="resume">
         <Resume />
+      </div>
+      <div id="work">
+        <Work />
       </div>
     </section>
   );
