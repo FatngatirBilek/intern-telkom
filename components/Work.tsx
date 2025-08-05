@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper";
+import { Swiper as SwiperType } from "swiper"; // Import Swiper type
 import "swiper/css";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -130,39 +130,38 @@ export default function Work() {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%] relative flex items-center">
+          <div className="w-full xl:w-[50%] relative">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="mb-12"
+              className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div
-                    className="w-full relative flex justify-center items-center"
-                    style={{
-                      aspectRatio: "16/9",
-                      width: "100%",
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
-                  >
+                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    {/* Image Overlay */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-black/10 z-10 pointer-events-none" />
                     {/* Image */}
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                    />
+                    <div className="relative w-full h-full flex justify-center items-center">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain" // changed from object-cover to object-contain
+                        style={{
+                          // Ensure the image is never cropped
+                          objectFit: "contain",
+                        }}
+                      />
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}
               {/* Slider btn */}
               <WorkSliderBtn
                 containerStyle="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center items-center transition-all "
                 iconsStyles="text-xl"
               />
             </Swiper>
