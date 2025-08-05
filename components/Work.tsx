@@ -24,6 +24,17 @@ import WorkSliderBtn from "./WorkSliderBtn";
 const projects = [
   {
     num: "01",
+    category: "Live Count",
+    title: "Airlangga 2025 Live Count",
+    description:
+      "Dinamic Live count used on upcoming Airlangga 2025 build using nextjs using chartjs and mongodb + dashboard page for admin to manage the live count",
+    stack: [{ name: "Typescript" }, { name: "NextJS" }, { name: "Mongodb" }],
+    image: "/images/Projects/Airlangga2025.webp",
+    // live: "https://example.com/NixyDotsLive",
+    github: "https://github.com/FatngatirBilek/Airlangga2025",
+  },
+  {
+    num: "02",
     category: "Dotfiles",
     title: "NixOS Hyprland dots",
     description:
@@ -34,7 +45,7 @@ const projects = [
     github: "https://github.com/FatngatirBilek/NixyDots",
   },
   {
-    num: "02",
+    num: "03",
     category: "Live Count",
     title: "Airlangga Live Count",
     description:

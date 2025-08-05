@@ -16,7 +16,7 @@ export default function Header() {
         {/* Desktop view Navbar & hire me button */}
         <div className="hidden xl:flex items-center gap-8">
           <Navbar />
-          <Link href={"/contact"}>
+          <Link href={"https://linkedin.com/in/FatngatirBilek"}>
             <Button>Hire Me</Button>
           </Link>
         </div>

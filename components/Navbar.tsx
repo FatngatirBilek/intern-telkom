@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 
 const links: { name: string; path: string }[] = [
   { name: "home", path: "#hero" },
-  { name: "services", path: "#services" },
+  // { name: "services", path: "#services" },
   { name: "resume", path: "#resume" },
   { name: "work", path: "#work" },
-  { name: "contact", path: "#contact" },
+  // { name: "contact", path: "#contact" },
 ];
 
 const scrolltoHash = (element_id: string) => {

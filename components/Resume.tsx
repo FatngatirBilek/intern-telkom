@@ -34,30 +34,30 @@ const experience = {
   icon: "/images/badge.svg",
   title: "My Experience",
   description:
-    "I have experience in many positions, including software engineering, web development, and project management.",
+    "I have experience as a Web Developer, focusing on web development and project management.",
   items: [
     {
-      company: "Thirr Org",
-      position: "Software Engineer",
+      company: "MPK Satriya Adhijaya (School organization)",
+      position: "Web Dev at Airlangga",
       duration: "2022 - Present",
     },
-    {
-      company: "Thirr Org",
-      position: "Web Developer",
-      duration: "2022 - Present",
-    },
-    {
-      company: "Thirr Org",
-      position: "Project Manager",
-      duration: "2022 - Present",
-    },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
-    { company: "-", position: "-", duration: "-" },
+    // {
+    //   company: "Thirr Org",
+    //   position: "Web Developer",
+    //   duration: "2022 - Present",
+    // },
+    // {
+    //   company: "Thirr Org",
+    //   position: "Project Manager",
+    //   duration: "2022 - Present",
+    // },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
+    // { company: "-", position: "-", duration: "-" },
   ],
 };
 

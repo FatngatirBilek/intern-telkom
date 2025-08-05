@@ -23,20 +23,27 @@ export default function Home() {
               Hello, I'm <br /> <span className="text-accent">Fathir</span>
             </h1>
             <p className="max-w[500px] mb-9 text-white">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various technologies, including React, TypeScript,
-              and Node.js.
+              As a student, I am enthusiastic about learning modern
+              technologies, including React, TypeScript, and Node.js.
             </p>
             {/* Socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant={"outline"}
-                size={"lg"}
-                className="uppercase flex items-center gap-2"
+              <a
+                href="/cv/cv.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contents"
               >
-                <FiDownload className="text-xl" />
-                Download CV
-              </Button>
+                <Button
+                  variant={"outline"}
+                  size={"lg"}
+                  className="uppercase flex items-center gap-2"
+                >
+                  <FiDownload className="text-xl" />
+                  Download CV
+                </Button>
+              </a>
               <div className="mb-8 xl:mb-0 ">
                 <Socials
                   containerStyles="flex gap-6"
