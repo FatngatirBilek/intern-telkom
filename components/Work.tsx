@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper"; // Import Swiper type
+import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -60,7 +60,6 @@ const projects = [
 export default function Work() {
   const [project, setProject] = useState(projects[0]);
   const handleSlideChange = (swiper: SwiperType) => {
-    // Define the type for swiper
     const currenIndex = swiper.activeIndex;
     setProject(projects[currenIndex]);
   };
@@ -88,7 +87,7 @@ export default function Work() {
               {/* Project Description */}
               <p className="text-white/60">{project.description}</p>
               {/* Stack Names */}
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {project.stack.map((tech, index) => (
                   <div key={index} className="text-xl text-accent">
                     {tech.name}
@@ -131,36 +130,39 @@ export default function Work() {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%] relative">
+          <div className="w-full xl:w-[50%] relative flex items-center">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="mb-12"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                    {/* Image Overlay */}
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10">
-                      {" "}
-                    </div>
+                  <div
+                    className="w-full relative flex justify-center items-center"
+                    style={{
+                      aspectRatio: "16/9",
+                      width: "100%",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                  >
                     {/* Image */}
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
                   </div>
                 </SwiperSlide>
               ))}
               {/* Slider btn */}
               <WorkSliderBtn
                 containerStyle="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center items-center transition-all "
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
                 iconsStyles="text-xl"
               />
             </Swiper>
