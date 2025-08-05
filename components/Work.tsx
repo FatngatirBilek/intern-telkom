@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper"; // Import Swiper type
+import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -139,22 +139,26 @@ export default function Work() {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                  <div
+                    className="relative w-full"
+                    style={{
+                      aspectRatio: "16 / 9",
+                      background: "transparent",
+                      overflow: "hidden",
+                    }}
+                  >
                     {/* Image Overlay */}
                     <div className="absolute top-0 left-0 w-full h-full bg-black/10 z-10 pointer-events-none" />
                     {/* Image */}
-                    <div className="relative w-full h-full flex justify-center items-center">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-contain" // changed from object-cover to object-contain
-                        style={{
-                          // Ensure the image is never cropped
-                          objectFit: "contain",
-                        }}
-                      />
-                    </div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
                   </div>
                 </SwiperSlide>
               ))}
