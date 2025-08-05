@@ -19,8 +19,7 @@ import { motion } from "framer-motion";
 
 const about = {
   title: "About Me",
-  description:
-    "I am a software engineer with a passion for building scalable and maintainable web applications.",
+  description: "My personal information:",
   info: [
     { fieldName: "Name", fieldValue: "Fathir Bima Shabri" },
     { fieldName: "Email", fieldValue: "fathirforbusiness@gmail.com" },
