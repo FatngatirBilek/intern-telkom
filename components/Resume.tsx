@@ -82,11 +82,13 @@ export default function Resume() {
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
-      <div className="container mx-auto flex flex-col gap-10 mt-10">
+      <div className="container mx-auto flex flex-col gap-10 mt-10 px-4 sm:px-6 lg:px-8 w-full">
         {/* Experience */}
         <section>
           <div className="flex flex-col gap-4 text-left">
-            <h3 className="text-4xl font-bold mb-2">{experience.title}</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-2">
+              {experience.title}
+            </h3>
             <p className="max-w-[600px] text-white/60 mb-4">
               {experience.description}
             </p>
@@ -95,13 +97,13 @@ export default function Resume() {
                 {experience.items.map((item, index) => (
                   <li
                     key={index}
-                    className="bg-[#232329] py-5 px-8 rounded-xl flex flex-col justify-center gap-1"
+                    className="bg-[#232329] py-5 px-4 sm:px-8 rounded-xl flex flex-col justify-center gap-1"
                   >
                     <span className="text-accent">{item.duration}</span>
-                    <h3 className="text-xl">{item.position}</h3>
+                    <h3 className="text-lg sm:text-xl">{item.position}</h3>
                     <div className="flex items-center gap-3">
                       <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                      <p className="text-white/60">{item.company}</p>
+                      <p className="text-white/60 text-sm">{item.company}</p>
                     </div>
                   </li>
                 ))}
@@ -113,7 +115,9 @@ export default function Resume() {
         {/* Education */}
         <section>
           <div className="flex flex-col gap-4 text-left">
-            <h3 className="text-4xl font-bold mb-2">{education.title}</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-2">
+              {education.title}
+            </h3>
             <p className="max-w-[600px] text-white/60 mb-4">
               {education.description}
             </p>
@@ -122,13 +126,13 @@ export default function Resume() {
                 {education.items.map((item, index) => (
                   <li
                     key={index}
-                    className="bg-[#232329] py-4 px-8 rounded-xl flex flex-col justify-center gap-1"
+                    className="bg-[#232329] py-4 px-4 sm:px-8 rounded-xl flex flex-col justify-center gap-1"
                   >
                     <span className="text-accent">{item.duration}</span>
-                    <h3 className="text-xl">{item.degree}</h3>
+                    <h3 className="text-lg sm:text-xl">{item.degree}</h3>
                     <div className="flex items-center gap-3">
                       <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                      <p className="text-white/60">{item.school}</p>
+                      <p className="text-white/60 text-sm">{item.school}</p>
                     </div>
                   </li>
                 ))}
@@ -140,17 +144,19 @@ export default function Resume() {
         {/* Skills */}
         <section>
           <div className="flex flex-col gap-4 text-left">
-            <h3 className="text-4xl font-bold mb-2">{skills.title}</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-2">
+              {skills.title}
+            </h3>
             <p className="max-w-[600px] text-white/60 mb-4">
               {skills.description}
             </p>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <ul className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {skills.skillList.map((skill, index) => (
                 <li key={index}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-full h-[90px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                        <div className="text-4xl group-hover:text-accent transition-all duration-300">
+                      <TooltipTrigger className="w-full h-[70px] sm:h-[90px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                        <div className="text-3xl sm:text-4xl group-hover:text-accent transition-all duration-300">
                           {skill.icon}
                         </div>
                       </TooltipTrigger>
@@ -168,15 +174,17 @@ export default function Resume() {
         {/* About Me */}
         <section>
           <div className="flex flex-col gap-4 text-left">
-            <h3 className="text-4xl font-bold mb-2">{about.title}</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold mb-2">
+              {about.title}
+            </h3>
             <p className="max-w-[600px] text-white/60 mb-4">
               {about.description}
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 max-w-[620px]">
+            <ul className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-y-2 max-w-[620px]">
               {about.info.map((item, index) => (
                 <li key={index} className="flex items-center gap-4">
                   <span className="text-white/60">{item.fieldName}</span>
-                  <span className="text-xl">{item.fieldValue}</span>
+                  <span className="text-lg sm:text-xl">{item.fieldValue}</span>
                 </li>
               ))}
             </ul>
