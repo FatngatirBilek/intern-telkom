@@ -20,11 +20,13 @@ export default function Home() {
               <Type />
             </span>
             <h1 className="h1">
-              Hello, I'm <br /> <span className="text-accent">Fathir</span>
+              Hello, We Are <br /> <span className="text-accent">Jambu</span>
             </h1>
             <p className="max-w[500px] mb-9 text-white">
-              As a student, I am enthusiastic about learning modern
-              technologies, including React, TypeScript, and Node.js.
+              Kami adalah sebuah tim web programming yang terdiri dari
+              individu-individu yang bersemangat dan berdedikasi. Kami bersatu
+              dengan satu tujuan: menciptakan solusi digital yang inovatif dan
+              efektif.
             </p>
             {/* Socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

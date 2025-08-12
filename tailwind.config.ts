@@ -53,7 +53,7 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#10E0FE",
+          DEFAULT: "#FF33E7",
           hover: "#00e187",
         },
         destructive: {

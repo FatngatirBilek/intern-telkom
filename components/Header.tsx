@@ -14,18 +14,12 @@ export default function Header() {
           <Image
             src="/logo.svg"
             alt="Logo"
-            width={40}
-            height={40}
+            width={100}
+            height={100}
             priority
-            className="w-10 h-10"
+            className="w-90 h-90"
             style={{ marginRight: "-2px" }} // Pull text closer to logo
           />
-          <h1
-            className="text-4xl font-semibold tracking-tight"
-            style={{ marginLeft: "-4px" }}
-          >
-            athir<span className="text-accent">.</span>
-          </h1>
         </Link>
         {/* Desktop view Navbar & hire me button */}
         <div className="hidden xl:flex items-center gap-8">

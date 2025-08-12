@@ -26,7 +26,7 @@ export default function Type() {
         style={{ paddingTop: "5rem", margin: "auto 0", fontWeight: "normal" }}
       >
         Life is simple{" "}
-        <span style={{ color: "#10E0FE", fontWeight: "bold" }}>
+        <span style={{ color: "#7a34eb", fontWeight: "bold" }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter
             words={["Eat", "Sleep", "Code", "Repeat!"]}
