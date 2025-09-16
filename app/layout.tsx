@@ -3,7 +3,6 @@ import { JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -12,8 +11,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fathir Bima Shabri",
-  description: "Fathir Bima Shabri's personal portfolio website",
+  title: "Kelompok",
+  description: "Kelompok personal portfolio website",
 };
 
 export default function RootLayout({
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className={jetbrainsMono.variable}>
         <Header />
         <PageTransition>{children}</PageTransition>
-        <SpeedInsights />
       </body>
     </html>
   );

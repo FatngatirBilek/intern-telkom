@@ -8,19 +8,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-primary py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        {/* title with logo as F */}
-        <Link href={"/"} className="flex items-center gap-1">
-          {/* Icon on the left */}
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={100}
-            height={100}
-            priority
-            className="w-90 h-90"
-            style={{ marginRight: "-2px" }} // Pull text closer to logo
-          />
-        </Link>
+        <h1 className="text-4xl font-semibold tracking-tight">
+          Netvara<span className="text-accent">.</span>
+        </h1>
         {/* Desktop view Navbar & hire me button */}
         <div className="hidden xl:flex items-center gap-8">
           <Navbar />

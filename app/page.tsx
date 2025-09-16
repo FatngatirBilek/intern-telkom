@@ -8,7 +8,7 @@ import Resume from "@/components/Resume";
 import Work from "@/components/Work";
 import Type from "@/components/Type";
 import Spotify from "@/components/Spotify";
-
+import Card from "@/components/Card";
 export default function Home() {
   return (
     <section className="h-full">
@@ -20,7 +20,7 @@ export default function Home() {
               <Type />
             </span>
             <h1 className="h1">
-              Hello, We Are <br /> <span className="text-accent">Jambu</span>
+              Hello, We Are <br /> <span className="text-accent">Netvara</span>
             </h1>
             <p className="max-w[500px] mb-9 text-white">
               Kami adalah sebuah tim web programming yang terdiri dari
@@ -71,6 +71,9 @@ export default function Home() {
       </div>
       <div id="work">
         <Work />
+      </div>
+      <div id="card">
+        <Card />
       </div>
       <div id="spotify">
         <Spotify />
