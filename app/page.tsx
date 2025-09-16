@@ -9,6 +9,7 @@ import Work from "@/components/Work";
 import Type from "@/components/Type";
 import Spotify from "@/components/Spotify";
 import Card from "@/components/Card";
+import TeamSection from "@/components/TeamSection";
 export default function Home() {
   return (
     <section className="h-full">
@@ -73,7 +74,7 @@ export default function Home() {
         <Work />
       </div>
       <div id="card">
-        <Card />
+        <TeamSection />
       </div>
       <div id="spotify">
         <Spotify />
