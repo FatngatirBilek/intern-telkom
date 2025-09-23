@@ -3,15 +3,22 @@
 import React from "react";
 import Card from "./Card";
 
-const teamMembers = [
-  { name: "Fathir Bima Shabri", image: "/images/Fathir.jpg", role: "leader" },
+type TeamRole = "leader" | "member";
+type TeamMember = {
+  name: string;
+  image: string;
+  role: TeamRole;
+};
+
+const teamMembers: TeamMember[] = [
+  { name: "Fathir Bima S", image: "/images/Fathir.jpg", role: "leader" },
   {
-    name: "Ariefin Nur Cahyono",
+    name: "Ariefin Nur",
     image: "/images/Ariefin.jpeg",
     role: "member",
   },
   { name: "Respati Ajeng", image: "/images/Respati.jpeg", role: "member" },
-  { name: "Khansa", image: "/images/Khansa.jpg", role: "member" },
+  { name: "Khansa Fathi", image: "/images/Khansa.jpg", role: "member" },
   { name: "Nychen", image: "/images/Nychen.JPG", role: "member" },
 ];
 
