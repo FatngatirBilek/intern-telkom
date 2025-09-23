@@ -46,7 +46,7 @@ export default function Card({
             src={image}
             height="960"
             width="540"
-            className="aspect-[9/16] w-full h-72 object-cover rounded-xl group-hover/card:shadow-xl"
+            className="aspect-[9/16] w-full h-72 object-cover object-top rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
         </CardItem>
