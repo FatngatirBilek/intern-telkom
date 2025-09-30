@@ -11,6 +11,7 @@ const links: { name: string; path: string }[] = [
   // { name: "services", path: "#services" },
   { name: "resume", path: "#resume" },
   { name: "work", path: "#work" },
+  { name: "blog", path: "https://fathir.tjkt.web.id/blog/" },
   // { name: "contact", path: "#contact" },
 ];
 
@@ -21,6 +22,20 @@ const scrolltoHash = (element_id: string) => {
     block: "start",
     inline: "nearest",
   });
+};
+
+const handleLinkClick = (
+  link: { name: string; path: string },
+  setActiveHash: (hash: string) => void,
+) => {
+  if (link.path.startsWith("http")) {
+    // External link - open in new tab
+    window.open(link.path, "_blank");
+  } else {
+    // Hash link - scroll to element
+    scrolltoHash(link.path.replace("#", ""));
+    setActiveHash(link.path);
+  }
 };
 
 export default function MobileNav() {
@@ -57,10 +72,7 @@ export default function MobileNav() {
           {links.map((link, index) => (
             <a
               key={index}
-              onClick={() => {
-                scrolltoHash(link.path.replace("#", ""));
-                setActiveHash(link.path);
-              }}
+              onClick={() => handleLinkClick(link, setActiveHash)}
               className={`${
                 activeHash === link.path &&
                 "text-accent border-b-2 border-accent"

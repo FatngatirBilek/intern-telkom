@@ -8,7 +8,7 @@ const links: { name: string; path: string }[] = [
   // { name: "services", path: "#services" },
   { name: "resume", path: "#resume" },
   { name: "work", path: "#work" },
-  // { name: "contact", path: "#contact" },
+  { name: "blog", path: "https://fathir.tjkt.web.id/blog/" },
 ];
 
 const scrolltoHash = (element_id: string) => {
@@ -18,6 +18,20 @@ const scrolltoHash = (element_id: string) => {
     block: "start",
     inline: "nearest",
   });
+};
+
+const handleLinkClick = (
+  link: { name: string; path: string },
+  setActiveHash: (hash: string) => void,
+) => {
+  if (link.path.startsWith("http")) {
+    // External link - open in new tab
+    window.open(link.path, "_blank");
+  } else {
+    // Hash link - scroll to element
+    scrolltoHash(link.path.replace("#", ""));
+    setActiveHash(link.path);
+  }
 };
 
 export default function Navbar() {
@@ -42,10 +56,7 @@ export default function Navbar() {
       {links.map((link, index) => (
         <a
           key={index}
-          onClick={() => {
-            scrolltoHash(link.path.replace("#", ""));
-            setActiveHash(link.path);
-          }}
+          onClick={() => handleLinkClick(link, setActiveHash)}
           className={`${
             activeHash === link.path && "text-accent border-b-2 border-accent"
           } capitalize font-medium hover:text-accent transition-all cursor-pointer`}

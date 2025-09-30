@@ -32,7 +32,7 @@ export default function Home() {
             </p>
             {/* Socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a
+              {/*<a
                 href="/cv/cv.pdf"
                 download
                 target="_blank"
@@ -47,7 +47,7 @@ export default function Home() {
                   <FiDownload className="text-xl" />
                   Download CV
                 </Button>
-              </a>
+              </a>*/}
               <div className="mb-8 xl:mb-0 ">
                 <Socials
                   containerStyles="flex gap-6"
@@ -80,9 +80,9 @@ export default function Home() {
       <div id="card">
         <TeamSection />
       </div>
-      <div id="spotify">
+      {/*<div id="spotify">
         <Spotify />
-      </div>
+      </div>*/}
     </section>
   );
 }

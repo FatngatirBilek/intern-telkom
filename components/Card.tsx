@@ -29,7 +29,7 @@ export default function Card({
             translateZ="60"
             className="text-black text-xs max-w-sm mt-2 px-2 py-1 bg-amber-500 rounded font-semibold w-fit"
           >
-            Leader
+            Founder
           </CardItem>
         )}
         {role === "member" && (
@@ -38,7 +38,7 @@ export default function Card({
             translateZ="60"
             className="text-white text-xs max-w-sm mt-2 px-2 py-1 bg-blue-500 rounded font-semibold w-fit"
           >
-            Member
+            Dev Team
           </CardItem>
         )}
         <CardItem translateZ="100" className="w-full mt-2">

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -41,7 +43,7 @@ function SinglePriceCard({
           {plan}
         </CardTitle>
         <div className="flex items-end mt-4">
-          <span className="text-5xl font-bold text-white">{price}</span>
+          <span className="text-2xl font-bold text-white">{price}</span>
           <span className="text-lg text-neutral-400 mb-1 ml-1">{period}</span>
         </div>
         <CardDescription className="text-neutral-300 mt-2">
@@ -82,68 +84,67 @@ function SinglePriceCard({
 }
 
 export default function PriceCard() {
+  const handleContactUs = () => {
+    window.open("https://wa.me/6283899944366", "_blank");
+  };
+
   return (
     <div className="w-full min-h-screen flex items-center justify-center py-12">
       <div className="flex flex-col sm:flex-row gap-8 w-full max-w-4xl justify-center items-center">
         <SinglePriceCard
-          plan="Starter Plan"
-          price="$19"
-          period="/month"
-          description="Complete Solution For Your Team Productivity"
+          plan="Personal"
+          price="IDR 1.200.000,00"
+          period="/aplikasi"
+          description="Prebuild aplikasi sesuai request yang sudah di integrasikan dengan database."
           features={[
             {
-              title: "Team collaboration tools",
-              description:
-                "Enable seamless collaboration with shared workspaces",
+              title: "Pre build app",
+              description: "Aplikasi yang sudah prebuild dan tinggal pakai.",
             },
             {
-              title: "Advanced project tracking",
+              title: "Database Integration",
               description:
-                "Monitor project progress with detailed analytics and reports",
+                "Aplikasi terintegrasi dengan database dinamis (MongoDB, MySQL).",
             },
             {
               title: "Automated task management",
               description:
-                "Streamline workflows with intelligent task automation",
+                "Aplikasi dilengkapi dengan pengerjaan tugas otomatis yang terstruksur.",
             },
             {
               title: "Priority customer support",
               description:
-                "Get expert assistance with priority support channels and quick response times.",
-            },
-          ]}
-          buttonLabel="Subscribe"
-          buttonGradient={true}
-        />
-        <SinglePriceCard
-          plan="Enterprise Plan"
-          price="$49"
-          period="/month"
-          description="Complete solution for your Enterprise Workflows"
-          features={[
-            {
-              title: "Unlimited team members",
-              description:
-                "Scale without limits with unlimited user access and collaboration tools.",
-            },
-            {
-              title: "Advanced analytics dashboard",
-              description:
-                "Get deep insights with comprehensive reporting tools",
-            },
-            {
-              title: "Custom workflow automation",
-              description:
-                "Create tailored workflows to optimize team efficiency",
-            },
-            {
-              title: "Dedicated success manager",
-              description:
-                "Receive personalized guidance from dedicated specialists",
+                "Dapatkan prioritas dan custumer support professional.",
             },
           ]}
           buttonLabel="Contact Us"
           buttonGradient={false}
+          onClick={handleContactUs}
+        />
+        <SinglePriceCard
+          plan="Perusahaan"
+          price="IDR ??"
+          period="/???"
+          description="Solusi untuk kelas perusahaan yang membutuhkan customisasi lebih sesuai kebutuhan perusahaan."
+          features={[
+            {
+              title: "Prebuild + Source Code",
+              description:
+                "Disediakan aplikasi prebuild dan source code sehingga memudahkan untuk di-maintain.",
+            },
+            {
+              title: "Custom Stack",
+              description:
+                "Bebas meminta stack apa yang akan digunakan baik untuk front-end back-end ataupun database.",
+            },
+            {
+              title: "Price based on request",
+              description: "Dapatkan harga sesuai kebutuhan perusahaan.",
+            },
+          ]}
+          buttonLabel="Contact Us"
+          buttonGradient={true}
+          onClick={handleContactUs}
         />
       </div>
     </div>

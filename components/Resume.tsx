@@ -18,21 +18,21 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
 const about = {
-  title: "About Me",
-  description: "My personal information:",
+  title: "About Us",
+  description: "Informasi tentang kamu:",
   info: [
-    { fieldName: "Name", fieldValue: "Fathir Bima Shabri" },
-    { fieldName: "Email", fieldValue: "fathirforbusiness@gmail.com" },
-    { fieldName: "Nationality", fieldValue: "Indonesian" },
+    { fieldName: "Name", fieldValue: "Netvara" },
+    { fieldName: "Email", fieldValue: "cs@netvara.com" },
+    { fieldName: "Based On", fieldValue: "Indonesian" },
     { fieldName: "Languages", fieldValue: "Bahasa, English" },
   ],
 };
 
 const experience = {
   icon: "/images/badge.svg",
-  title: "My Experience",
+  title: "Our Experience",
   description:
-    "I have experience as a Web Developer, focusing on web development and project management.",
+    "Kami sudah beberapa kali bekerjasama dengan perusahaan terkenal yang ada di Indonesia.",
   items: [
     {
       company: "MPK Satriya Adhijaya (School organization)",
@@ -42,23 +42,23 @@ const experience = {
   ],
 };
 
-const education = {
-  icon: "/images/cap.svg",
-  title: "My Education",
-  description: "I haven't Completed my Education",
-  items: [
-    {
-      school: "state vocational high school 1 klaten",
-      degree: "-",
-      duration: "2023 - present",
-    },
-  ],
-};
+// const education = {
+//   icon: "/images/cap.svg",
+//   title: "My Education",
+//   description: "I haven't Completed my Education",
+//   items: [
+//     {
+//       school: "state vocational high school 1 klaten",
+//       degree: "-",
+//       duration: "2023 - present",
+//     },
+//   ],
+// };
 
 const skills = {
-  title: "My Skills",
+  title: "Our Stacks",
   description:
-    "I have built my skills in React, NextJS, MongoDB, and TypeScript.",
+    "Beberapa framework dan teknologi yang sering kami gunakan untuk membangun sebuah aplikasi.",
   skillList: [
     { name: "React", icon: <FaReact /> },
     { name: "NextJS", icon: <SiNextdotjs /> },
@@ -83,7 +83,7 @@ export default function Resume() {
     >
       <div className="container mx-auto flex flex-col gap-10 mt-10 px-4 sm:px-6 lg:px-8 w-full">
         {/* Experience */}
-        <section>
+        {/*<section>
           <div className="flex flex-col gap-4 text-left">
             <h3 className="text-3xl sm:text-4xl font-bold mb-2">
               {experience.title}
@@ -112,7 +112,7 @@ export default function Resume() {
         </section>
 
         {/* Education */}
-        <section>
+        {/*<section>
           <div className="flex flex-col gap-4 text-left">
             <h3 className="text-3xl sm:text-4xl font-bold mb-2">
               {education.title}
@@ -138,7 +138,7 @@ export default function Resume() {
               </ul>
             </ScrollArea>
           </div>
-        </section>
+        </section>*/}
 
         {/* Skills */}
         <section>
