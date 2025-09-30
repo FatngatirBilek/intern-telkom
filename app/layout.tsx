@@ -11,8 +11,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kelompok",
-  description: "Kelompok personal portfolio website",
+  title: "Web Portofolio kelompok 1",
+  description: "web yang dibuat oleh kelompok 1 XII TJKT 2",
 };
 
 export default function RootLayout({
