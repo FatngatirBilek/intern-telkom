@@ -24,7 +24,7 @@ export default function Home() {
             <h1 className="h1">
               Hello, We Are <br /> <span className="text-accent">Netvara</span>
             </h1>
-            <p className="max-w[500px] mb-9 text-white">
+            <p className="max-w[500px] mb-9 text-text-primary">
               Kami adalah sebuah tim web programming yang terdiri dari
               individu-individu yang bersemangat dan berdedikasi. Kami bersatu
               dengan satu tujuan: menciptakan solusi digital yang inovatif dan

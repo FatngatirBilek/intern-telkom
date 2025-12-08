@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const links: { name: string; path: string }[] = [
-  { name: "home", path: "#hero" },
+  { name: "Beranda", path: "#hero" },
   // { name: "services", path: "#services" },
-  { name: "resume", path: "#resume" },
-  { name: "work", path: "#work" },
-  { name: "blog", path: "https://fathir.tjkt.web.id/blog/" },
+  { name: "Paket", path: "#resume" },
+  { name: "Keunggulan", path: "#work" },
+  // { name: "blog", path: "https://fathir.tjkt.web.id/blog/" },
 ];
 
 const scrolltoHash = (element_id: string) => {
@@ -58,8 +58,9 @@ export default function Navbar() {
           key={index}
           onClick={() => handleLinkClick(link, setActiveHash)}
           className={`${
-            activeHash === link.path && "text-accent border-b-2 border-accent"
-          } capitalize font-medium hover:text-accent transition-all cursor-pointer`}
+            activeHash === link.path &&
+            "text-text-primary border-b-2 border-accent"
+          } capitalize font-medium hover:text-accent text-xl transition-all cursor-pointer`}
         >
           {link.name}
         </a>
