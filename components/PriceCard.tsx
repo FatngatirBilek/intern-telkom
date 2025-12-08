@@ -37,16 +37,16 @@ function SinglePriceCard({
   onClick,
 }: PriceCardProps) {
   return (
-    <Card className="bg-black border border-neutral-700 rounded-2xl shadow-lg w-full max-w-sm flex flex-col h-[650px]">
+    <Card className="bg-white border border-neutral-200 rounded-2xl shadow-lg w-full max-w-sm flex flex-col h-[650px]">
       <CardHeader>
-        <CardTitle className="text-white text-2xl font-semibold">
+        <CardTitle className="text-text-primary text-2xl font-semibold">
           {plan}
         </CardTitle>
         <div className="flex items-end mt-4">
-          <span className="text-2xl font-bold text-white">{price}</span>
-          <span className="text-lg text-neutral-400 mb-1 ml-1">{period}</span>
+          <span className="text-2xl font-bold text-text-primary">{price}</span>
+          <span className="text-lg text-neutral-500 mb-1 ml-1">{period}</span>
         </div>
-        <CardDescription className="text-neutral-300 mt-2">
+        <CardDescription className="text-neutral-700 mt-2">
           {description}
         </CardDescription>
       </CardHeader>
@@ -56,8 +56,10 @@ function SinglePriceCard({
             <li className="flex items-start gap-3" key={idx}>
               <CheckCircle2 className="text-green-400 mt-1" size={20} />
               <div>
-                <span className="text-white font-medium">{feature.title}</span>
-                <div className="text-neutral-400 text-sm">
+                <span className="text-text-primary font-medium">
+                  {feature.title}
+                </span>
+                <div className="text-neutral-500 text-sm">
                   {feature.description}
                 </div>
               </div>
