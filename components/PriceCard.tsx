@@ -12,7 +12,7 @@ import { CheckCircle2 } from "lucide-react";
 
 type Feature = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 type PriceCardProps = {
@@ -33,52 +33,43 @@ function SinglePriceCard({
   description,
   features,
   buttonLabel,
-  buttonGradient = false,
   onClick,
 }: PriceCardProps) {
   return (
-    <Card className="bg-white border border-neutral-200 rounded-2xl shadow-lg w-full max-w-sm flex flex-col h-[650px]">
-      <CardHeader>
-        <CardTitle className="text-text-primary text-2xl font-semibold">
+    <Card className="bg-white border border-neutral-200 rounded-2xl shadow-md w-full max-w-sm flex flex-col h-auto px-6 py-8">
+      <CardHeader className="p-0 mb-4">
+        <CardTitle className="text-lg font-semibold text-gray-900 mb-1 text-left">
           {plan}
         </CardTitle>
-        <div className="flex items-end mt-4">
-          <span className="text-2xl font-bold text-text-primary">{price}</span>
-          <span className="text-lg text-neutral-500 mb-1 ml-1">{period}</span>
+        <div className="flex items-end gap-1 text-left">
+          <span className="text-3xl font-bold text-gray-900">{price}</span>
+          <span className="text-base text-gray-500">{period}</span>
         </div>
-        <CardDescription className="text-neutral-700 mt-2">
-          {description}
-        </CardDescription>
+        {description && (
+          <CardDescription className="text-gray-500 mt-2 text-left">
+            {description}
+          </CardDescription>
+        )}
       </CardHeader>
-      <CardContent>
-        <ul className="space-y-5 mt-2">
+      <CardContent className="p-0 flex-1">
+        <div className="text-sm font-semibold text-gray-700 mb-2 mt-4">
+          Included:
+        </div>
+        <ul className="space-y-2">
           {features.map((feature, idx) => (
-            <li className="flex items-start gap-3" key={idx}>
-              <CheckCircle2 className="text-green-400 mt-1" size={20} />
-              <div>
-                <span className="text-text-primary font-medium">
-                  {feature.title}
-                </span>
-                <div className="text-neutral-500 text-sm">
-                  {feature.description}
-                </div>
-              </div>
+            <li className="flex items-start gap-2 text-gray-700" key={idx}>
+              <CheckCircle2 className="text-gray-400 mt-0.5" size={18} />
+              <span>{feature.title}</span>
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="mt-auto flex items-end">
+      <CardFooter className="p-0 mt-6">
         <button
-          className={`w-full py-2 rounded-xl font-semibold text-white transition-colors flex items-center justify-center gap-2
-            ${
-              buttonGradient
-                ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
-                : "bg-neutral-900 border border-neutral-700 hover:bg-neutral-800 text-white"
-            }
-          `}
+          className="w-full py-2 rounded-full font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors"
           onClick={onClick}
         >
-          {buttonLabel} <span aria-hidden>→</span>
+          {buttonLabel}
         </button>
       </CardFooter>
     </Card>
@@ -92,60 +83,68 @@ export default function PriceCard() {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center py-12">
-      <div className="flex flex-col sm:flex-row gap-8 w-full max-w-4xl justify-center items-center">
+      <div className="flex flex-col sm:flex-row gap-8 w-full max-w-5xl justify-center items-center">
         <SinglePriceCard
-          plan="Personal"
-          price="IDR 1.200.000,00"
-          period="/aplikasi"
-          description="Prebuild aplikasi sesuai request yang sudah di integrasikan dengan database."
+          plan="Free"
+          price="$0"
+          period=""
+          description="Start with free"
           features={[
+            { title: "AI-powered suggested matches" },
             {
-              title: "Pre build app",
-              description: "Aplikasi yang sudah prebuild dan tinggal pakai.",
+              title: "Unlimited connection requests with other Kinhive members",
             },
-            {
-              title: "Database Integration",
-              description:
-                "Aplikasi terintegrasi dengan database dinamis (MongoDB, MySQL).",
-            },
-            {
-              title: "Automated task management",
-              description:
-                "Aplikasi dilengkapi dengan pengerjaan tugas otomatis yang terstruksur.",
-            },
-            {
-              title: "Priority customer support",
-              description:
-                "Dapatkan prioritas dan custumer support professional.",
-            },
+            { title: "Unlimited 1:1 and group chat messages" },
+            { title: "Join up to 5 teams" },
+            { title: "Create up to 1 project" },
           ]}
-          buttonLabel="Contact Us"
-          buttonGradient={false}
+          buttonLabel="Start with free"
           onClick={handleContactUs}
         />
         <SinglePriceCard
-          plan="Perusahaan"
-          price="IDR ??"
-          period="/???"
-          description="Solusi untuk kelas perusahaan yang membutuhkan customisasi lebih sesuai kebutuhan perusahaan."
+          plan="Member Pro"
+          price="$24"
+          period="/mo"
+          description=""
           features={[
+            { title: "AI-powered suggested matches" },
             {
-              title: "Prebuild + Source Code",
-              description:
-                "Disediakan aplikasi prebuild dan source code sehingga memudahkan untuk di-maintain.",
+              title: "Unlimited connection requests with other Kinhive members",
             },
-            {
-              title: "Custom Stack",
-              description:
-                "Bebas meminta stack apa yang akan digunakan baik untuk front-end back-end ataupun database.",
-            },
-            {
-              title: "Price based on request",
-              description: "Dapatkan harga sesuai kebutuhan perusahaan.",
-            },
+            { title: "Unlimited 1:1 and group chat messages" },
+            { title: "Join unlimited teams" },
+            { title: "Boosted visibility to potential collaborators" },
+            { title: "Members-only community chat" },
           ]}
-          buttonLabel="Contact Us"
-          buttonGradient={true}
+          buttonLabel="Get started"
+          onClick={handleContactUs}
+        />
+        <SinglePriceCard
+          plan="Founder Pro"
+          price="$48"
+          period="/project /mo"
+          description=""
+          features={[
+            { title: "AI-powered suggested matches" },
+            {
+              title: "Unlimited connection requests with other Kinhive members",
+            },
+            { title: "Unlimited 1:1 and group chat messages" },
+            { title: "Invite unlimited cofounders to your workspace" },
+            { title: "Create unlimited projects" },
+            { title: "Boosted visibility to potential collaborators" },
+            {
+              title:
+                "Template library with documents like NDAs, equity agreements, offer letters, and more",
+            },
+            { title: "In-app private live video chat breakout rooms" },
+            {
+              title:
+                "Enable additional server-side encryption for secure messaging",
+            },
+            { title: "Founders-only community chat" },
+          ]}
+          buttonLabel="Get started"
           onClick={handleContactUs}
         />
       </div>
