@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: db_indihome
+    restart: always
+    environment:
+      POSTGRES_USER: indihome_user
+      POSTGRES_PASSWORD: indihome_pass
+      POSTGRES_DB: indihome_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - indihome_net
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  indihome_net:
+    driver: bridge
